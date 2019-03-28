@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         test()
         println(sum(1,2))
+        createSimpson()
     }
     fun test(){
         println("test")
@@ -21,5 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
     fun helloWorld(view: View){
     textView.text="Hello World"
+    }
+    fun createSimpson(){
+        var homer=Simpson("Homer",50,"Nuclear Safty");
+        homer.age=51
+        println(homer.age)
     }
 }
