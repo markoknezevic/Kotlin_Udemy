@@ -6,13 +6,12 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+var age:Int?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        test()
-        println(sum(1,2))
-        createSimpson()
+
+
     }
     fun test(){
         println("test")
@@ -21,11 +20,18 @@ class MainActivity : AppCompatActivity() {
         return a+b;
     }
     fun helloWorld(view: View){
-    textView.text="Hello World"
+    textV.text="Hello World"
     }
-    fun createSimpson(){
-        var homer=Simpson("Homer",50,"Nuclear Safty");
-        homer.age=51
-        println(homer.age)
+    fun makeSimpson(view: View){
+        val name=nameText.text.toString()
+        if(!ageText.text.toString().equals(""))
+            age=ageText.text.toString().toInt()
+        else
+            age=0
+        val job=jobText.text.toString()
+
+      var simpson=Simpson(name,age,job)
+        textV.text="Name: "+simpson.name+" Age: "+simpson.age+" Job: "+simpson.job
+        println("ddd")
     }
 }
