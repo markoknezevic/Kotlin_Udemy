@@ -16,5 +16,12 @@ class MainActivity : AppCompatActivity() {
         //sharedPerferences.edit().putInt("userAge",age).apply()
         val s=sharedPerferences.getInt("userAge",0)
         textView.text=s.toString()
+        age =31
+        sharedPerferences.edit().putInt("userAge",age).apply()
+        val s2=sharedPerferences.getInt("userAge",0)
+       textView.text=s2.toString()
+        sharedPerferences.edit().remove("userAge").apply()
+        val s3=sharedPerferences.getInt("userAge",0)
+        textView.text=s3.toString()
     }
 }
