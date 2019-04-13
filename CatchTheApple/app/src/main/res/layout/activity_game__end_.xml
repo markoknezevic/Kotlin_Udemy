@@ -7,4 +7,18 @@
         android:layout_height="match_parent"
         tools:context=".Game_End_Activity">
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" android:gravity="center"
+            android:textSize="30sp" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="64dp"
+            android:layout_marginStart="64dp" android:layout_marginTop="292dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+            android:text="Play Again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRetry" android:onClick="retry" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="147dp" android:layout_marginStart="147dp" android:layout_marginBottom="255dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>
