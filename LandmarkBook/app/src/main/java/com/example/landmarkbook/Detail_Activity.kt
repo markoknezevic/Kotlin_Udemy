@@ -13,5 +13,9 @@ class Detail_Activity : AppCompatActivity() {
         val name=intent.getStringExtra("name")
         textView.text=name
 
+        val chosen=Global.Chosen
+        val selectedImage=chosen.returnImage()
+        imageView.setImageBitmap(selectedImage)
+
     }
 }

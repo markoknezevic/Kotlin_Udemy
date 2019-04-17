@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
             val intent= Intent(applicationContext,Detail_Activity::class.java)
             intent.putExtra("name",landmarkNames[i])
 
+            val bitmap=landmarkImages[i]
+
+            val chosen=Global.Chosen
+            chosen.cimage=bitmap
 
             startActivity(intent)
         }
