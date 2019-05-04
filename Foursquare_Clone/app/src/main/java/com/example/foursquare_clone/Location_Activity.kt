@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.parse.ParseObject
 import com.parse.ParseQuery
+import com.parse.ParseUser
 import kotlinx.android.synthetic.main.activity_location_.*
 
 class Location_Activity : AppCompatActivity() {
@@ -50,6 +51,7 @@ class Location_Activity : AppCompatActivity() {
         listView.adapter = arrayAdapter
 
         val query = ParseQuery.getQuery<ParseObject>("Location")
+        query.whereEqualTo("username",ParseUser.getCurrentUser().username.toString())
         query.findInBackground { objects, e ->
             if(e != null){
                 Toast.makeText(applicationContext,e.localizedMessage,Toast.LENGTH_LONG).show()
