@@ -114,7 +114,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         if(requestCode == 2 && grantResults.size > 0){
             if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-                locationManager!!.requestLocationUpdates(LocationManager.GPS_PROVIDER,2,2f,locationListener)
+                //locationManager!!.requestLocationUpdates(LocationManager.GPS_PROVIDER,2,2f,locationListener)
+                val loc = locationManager!!.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+                val uloc = LatLng(loc.latitude,loc.longitude)
+                mMap.addMarker(MarkerOptions().position(uloc).title("Your location"))
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(uloc,12f))
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
